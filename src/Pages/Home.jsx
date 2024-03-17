@@ -1,47 +1,92 @@
-import React from 'react'
-import { Col, Row } from 'react-bootstrap'
-import images from '../assets/images.gif'
+import React, { useEffect, useState } from 'react'
+import { Row, Col, Button } from 'react-bootstrap'
+import titleimage from '../assets/mernp1.gif'
 import ProjectCard from '../components/ProjectCard'
 import { Link } from 'react-router-dom'
 
 
 function Home() {
-  return (
-    <>
-    <div style={{width:'100%',height:'100vh',backgroundColor:"beige"}} className='container-fluid rounded'>
-        <Row className='align-items-center p-5'>
-            <Col sm={12} md={6}>
-                <h1 style={{fontSize:'80px'}} className='fw-border text-dark'><i class="fa-solid fa-list-check fa-xs me-2 "></i>Project Fair</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, excepturi. 
-                    Nihil culpa distinctio praesentium cupiditate, provident quia adipisci dicta, 
-                    pariatur laborum nemo dolores quisquam ex veniam, modi necessitatibus ab repudiandae!</p>
-                    <Link to={'/login'} className='btn btn-dark p-2'>Start to Explore<i class="fa-solid fa-right-long fa-beat ms-2"></i></Link>
-            </Col>
-            <Col sm={12} md={6}>
-                <img width={'500px'} src={images} alt="" />
-            </Col>
-        </Row>
+  const [loggedin,setLoggedin]=useState(false)
 
-    </div>
+ useEffect(()=>{
+  if(sessionStorage.getItem("token")){
+    setLoggedin(true)
+  }
+  else{
+    setLoggedin(false)
+  }
+ },[])
+
+    return (
+        <>
+            <div className="container-fluid rounded bg-primary">
+
+                <Row className='align-itemes-center p-5'>
+                    <Col sm={12} md={6}>
+                        <h1 className='fw-bolder text-light'><i class="fa-solid fa-list-check"></i>Project-Fair</h1>
+                        <p className='align-items-justify'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi error asperiores, sunt fugiat consectetur totam voluptas tempore exercitationem! Recusandae qui neque, incidunt quod molestiae amet fugit molestias nihil eligendi temporibus.</p>
+                        {loggedin?
+                         <Link to={'/dashboard'} className='btn btn-warning border border-rounded'>Manage Your Projects <i class="fa-solid fa-arrow-right"></i></Link>:
+                         <Link to={'/login'} className='btn btn-warning border border-rounded'>Start to Explore <i class="fa-solid fa-arrow-right"></i></Link>
+                        }
+
+                    </Col>
+
+                    <Col sm={12} md={6}>
+                    <img width={'500px'} src={titleimage} alt="" />
+                    </Col>
 
 
-    <div className='all-projects mt-5'>
-        <h1 className='text-center'>Explore your projects</h1>
-        <marquee scrollAmount={15}>
-        <Row>
-            <Col sm={12} md={6} lg={4}>
-                <ProjectCard/>
-            
-            </Col>
-        </Row>
-        </marquee>
-        <div className='text-center'><Link to={'/project'}>View more projects</Link></div>
+                </Row>
+            </div>
 
-    </div>
-    </>
+            {/* projectcard */}
 
-    
-  )
+            <div className='all-projects mt-4'>
+                <h1 className='fw-bolder text-center'>Explore Your Projects</h1>
+   <marquee scrollAmount={25}>
+                <Row className='align-items-center'>
+                    <Col sm={12} md={6} lg={3}>
+
+                      <ProjectCard/>  
+
+                    </Col>
+
+                    <Col sm={12} md={6} lg={3}>
+
+                      <ProjectCard/>  
+
+                    </Col>
+
+                    <Col sm={12} md={6} lg={3}>
+
+                      <ProjectCard/>  
+
+                    </Col>
+
+                    <Col sm={12} md={6} lg={3}>
+
+                      <ProjectCard/>  
+
+                    </Col>
+                </Row>
+                </marquee>
+
+                <div className='text-center mt-5'><Link to={'/projects'}>View More Projects</Link></div>
+            </div>
+
+
+        </>
+    )
 }
 
 export default Home
+
+
+// const [username,setUsername]=useState(false)
+
+// useEffect(()=>{
+//   if(sessionStorage.getItem("existingUser")){
+//     setUsername(JSON.parse(sessionStorage.getItem("existingUser")).username);
+//   }
+// })

@@ -1,43 +1,55 @@
 import React, { useState } from 'react'
-import { Button, Card, Col, Modal, Row } from 'react-bootstrap'
+import { Card, Col, Modal, Row } from 'react-bootstrap'
+import projectpic from '../assets/mernp.jpg'
+
+
+
 
 
 function ProjectCard() {
-    const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    return (
-        <>
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiNg3iIetS2JKCdLABJ2SFYE5aYHlUkECSJ6uqAvyOKvDZSQrMf8VEKj50Pw4VGfN0ET8&usqp=CAU" onClick={handleShow} />
-                <Card.Body>
-                    <Card.Title>Project Title</Card.Title>
-                </Card.Body>
-            </Card>
+  const [show, setShow] = useState(false);
 
-            <Modal size='lg' show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Row>
-                        <Col md={6}>
-                            <img style={{ height: '300px', width: '300px' }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiNg3iIetS2JKCdLABJ2SFYE5aYHlUkECSJ6uqAvyOKvDZSQrMf8VEKj50Pw4VGfN0ET8&usqp=CAU" alt="img" />
-                        </Col>
-                        <Col md={6}>
-                            <h2>Project Title</h2>
-                            <p>Project Overview: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat et temporibus ex repudiandae porro ipsam expedita ratione nobis neque quia consequuntur, eius quo quam distinctio quaerat. Odit doloremque iste incidunt.</p>
-                        </Col>
-                    </Row>
-                    <div>
-                    <i class="fa-brands fa-github"></i>  <i class="fa-solid fa-link"></i>
-                    </div>
-                </Modal.Body>
-            </Modal >
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  return (
+    <>
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={projectpic} onClick={handleShow} />
+      <Card.Body>
+        <Card.Title>Project Title</Card.Title>
+        
+        
+      </Card.Body>
+    </Card>
 
-        </>
-    )
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Row>
+            <Col md={6}>
+              <img style={{height:'200px',width:'200px'}} src={projectpic}/>
+            </Col>
+
+            <Col md={6}>
+             <h2 className='fw-bolder'>Project Title</h2>
+             <p>Some quick example text to build on the card title and make up the bulk of</p>
+             <p>Language Used: <span className='fw-bolder'>ReactJS, NodeJS, ExpressJS, MongoDB</span></p>
+            </Col>
+          </Row>
+
+          <div>
+            <a href="" className='me-3 btn text-dark'><i class="fa-brands fa-github"></i></a>
+            <a href=""  className='me-3 btn text-dark'><i class="fa-solid fa-link"></i></a>
+          </div>
+        </Modal.Body>
+        
+      </Modal>
+    
+    </>
+  )
 }
 
 export default ProjectCard

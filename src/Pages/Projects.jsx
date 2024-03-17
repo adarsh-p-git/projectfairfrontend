@@ -3,9 +3,9 @@ import Header from '../components/Header'
 import ProjectCard from '../components/ProjectCard'
 import { Col, Row } from 'react-bootstrap'
 
-function Project() {
 
-    return (
+function Projects() {
+  return (
     <>
       <Header/>
      <div style={{marginTop:'100px'}} className='projects'>
@@ -13,7 +13,7 @@ function Project() {
       <div className='d-flex justify-content-center w-100'>
         <div className='d-flex border w-50 rounded mb-3'>
           <input type="text" className='form-control'  placeholder='search project by technologies'/>
-          <i style={{marginLeft:'-50px'}} class="fa-solid fa-magnifying-glass"></i>
+          <i style={{margin:'10px'}} class="fa-solid fa-magnifying-glass"></i>
 
         </div>
 
@@ -27,7 +27,6 @@ function Project() {
      </div>
     </>
   )
-
 }
 
-export default Project
+export default Projects

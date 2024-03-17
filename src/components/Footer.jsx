@@ -3,97 +3,106 @@ import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-k
 
 function Footer() {
   return (
-    <>
-    <div> <MDBFooter style={{backgroundColor:'beige'}} className='text-center text-lg-start text-muted p-3'>
-  
+    <div>
+      <MDBFooter bgColor='info' className=' text-white text-center   '>
+      {}
 
-  <section className=''>
-    <MDBContainer className='text-center text-md-start mt-5'>
-      <MDBRow className='mt-3'>
-        <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
-          <h6 className='text-uppercase fw-bold mb-4'>
-          <i class="fa-solid fa-video me-2"></i>
-            project fair
-          </h6>
-          <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit.
-          </p>
-        </MDBCol>
+      <section className='mt-3'>
+        <MDBContainer className='text-center text-md-start mt-5'>
+          <MDBRow className='mt-3'>
+            <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
+              <h6 className='text-uppercase fw-bold mb-4'>
+                <MDBIcon icon="video-camera" className="me-3 " style={{color:'orange'}} />
+                Video Player
+              </h6>
+              <p className='text-white'>
+              free and open source cross-platform multimedia player and framework that plays most multimedia files
+               as well as DVDs, Audio CDs, VCDs, and various streaming protocols.
 
-        <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-1'>
-          <h6 className='text-uppercase fw-bold mb-4'>Links</h6>
-          <p>
-            <a href='/' className='text-reset'>
-            Home
-            </a>
-          </p>
-          <p>
-            <a href='http://localhost:3000/login' className='text-reset'>
-            Login
-            </a>
-          </p>
-          <p>
-            <a href='http://localhost:3000/Register' className='text-reset'>
-              Register
-            </a>
-          </p>
+
     
-        </MDBCol>
+              </p>
+            </MDBCol>
 
-        <MDBCol md="1" lg="2" xl="2" className='mx-auto mb-4'>
-          <h6 className='text-uppercase fw-bold mb-4'>Guides</h6>
-          <p>
-            <a href='/' className='text-reset'>
-              React
-            </a>
-          </p>
-          <p>
-            <a href='/' className='text-reset'>
-              React Bootstrap
-            </a>
-          </p>
-          <p>
-            <a href='/' className='text-reset'>
-              Bootswatch
-            </a>
-          </p>
-        </MDBCol>
+            <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
+              <h6 className='text-uppercase fw-bold mb-4'>Links</h6>
+              <p>
+              <a href='/' className='text-white' style={{textDecoration:'none'}}>
+                  Landing Page
+                </a>
+              </p>
+              <p>
+              <a href='/Home' className='text-white' style={{textDecoration:'none'}}>
+                  Home page
+                </a>
+              </p>
+              <p>
+              <a href='/Watchhistory' className='text-white' style={{textDecoration:'none'}}>
+                  Watch History
+                </a>
+              </p>
+              
+            </MDBCol>
 
-        <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
-          <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
-          <p>
-          <input  type="text" style={{width:'170px',color:"black"}} /> <input type="button" value="subscribe" className='btn-warning' />
-          </p>
-          <p>
-          <section className='d-flex justify-content-center justify-content-lg-between p-4 '>
-  
+            <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
+              <h6 className='text-uppercase fw-bold mb-4'>Guides</h6>
+              <p>
+              <a href='https://react.dev/' className='text-white' style={{textDecoration:'none'}}>
+                  React
+                </a>
+              </p>
+              <p>
+              <a href='https://react-bootstrap.github.io/' className='text-white' style={{textDecoration:'none'}}>
+                  React Bootsrap
+                </a>
+              </p>
+              <p>
+                <a href='https://bootswatch.com/' className='text-white' style={{textDecoration:'none'}}>
+                  Bootswatch
+                </a>
+              </p>
+              
+            </MDBCol>
 
-  <div>
-    <a href='' className='me-4 text-reset'>
-      <MDBIcon fab icon="facebook-f" />
-    </a>
-    <a href='' className='me-4 text-reset'>
-      <MDBIcon fab icon="twitter" />
-    </a>
-    <a href='' className='me-4 text-reset'>
-      <MDBIcon fab icon="instagram" />
-    </a>
-    <a href='' className='me-4 text-reset'>
-      <MDBIcon fab icon="linkedin" />
-    </a>
-  </div>
-</section>
-          </p>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
-  </section>
+            <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
+              <h6 className='text-uppercase fw-bold mb-4'>Contact Us</h6>
+              <div>
+              <div>
+              <input className='mb-3 me-2 border rounded' type="text" placeholder='Enter Your Email ID' />
+              <button style={{backgroundColor:'orange'}} className='border rounded'>Subscribe</button>
+              
+              </div>
+              <div className=''>
+          <a href='/' className='m-4 text-white'>
+            <MDBIcon fab icon="facebook-f" />
+          </a>
+          <a href='/' className='m-4 text-white'>
+            <MDBIcon fab icon="twitter" />
+          </a>
+          
+          <a href='/' className='m-4 text-white '>
+            <MDBIcon fab icon="instagram" />
+          </a>
+          <a href='/' className='m-4 text-white'>
+            <MDBIcon fab icon="linkedin" />
+          </a>
+          
+        </div>
+        </div>
+             
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </section>
 
-  <div className='text-light text-center p-4' style={{ backgroundColor: 'black' }}>
-    © 2024 Copyright: Project Fair build with react
-  </div>
-</MDBFooter></div></>
+      <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
+        © 2024 Copyright:
+        <a className='text-reset fw-bold' href='/' style={{textDecoration:'none'}}>
+          VideoPlayer.com
+        </a>
+      </div>
+    </MDBFooter>
+    </div>
   )
 }
 
